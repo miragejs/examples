@@ -23,6 +23,8 @@ npm install -D @miragejs/server@2.0.0-beta.4
 Import and use Mirage!
 
 ```js
+// App.js
+import React, { Component } from 'react';
 import Server from '@miragejs/server';
 
 let server = new Server();
@@ -35,4 +37,33 @@ server.get('/users', () => (
     ]
   }
 ));
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: []
+    };
+  }
+
+  componentDidMount() {
+    fetch('/api/users')
+      .then(response => response.json())
+      .then(json => this.setState({ users: json.data }));
+  }
+
+  render() {
+    return (
+      <ul>
+        {this.state.users.map(user =>
+          <li key={user.id}>
+            {user.attributes.name}
+          </li>
+        )}
+      </ul>
+    );
+  }
+}
+
+export default App;
 ```
