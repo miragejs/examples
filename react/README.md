@@ -7,9 +7,10 @@ Check out the top of [App.js](https://github.com/miragejs/demos/blob/master/reac
 Install Mirage:
 
 ```sh
-yarn install -D @miragejs/server@2.0.0-beta.4
+yarn add -D @miragejs/server@2.0.0-beta.4
 
-# or npm install -D @miragejs/server@2.0.0-beta.4
+# Or use npm
+npm install -D @miragejs/server@2.0.0-beta.4
 ```
 
 Import and use Mirage!

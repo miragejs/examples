@@ -2,9 +2,6 @@
   "name": "react-mirage-demo",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "@miragejs/server": "*"
-  },
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -24,5 +21,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@miragejs/server": "2.0.0-beta.4"
+  }
 }
