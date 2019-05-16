@@ -1,5 +1,12 @@
 # Mirage React demo
 
+To see the demo,
+
+1. Clone this repo
+2. `cd demos/react`
+3. `yarn install`
+4. `yarn start`
+
 Check out the top of [App.js](https://github.com/miragejs/demos/blob/master/react/src/App.js).
 
 ## Usage in your own React app
