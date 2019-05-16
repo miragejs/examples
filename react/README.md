@@ -1,13 +1,15 @@
 # Mirage React demo
 
-Check out the top of [App.js](https://github.com/miragejs/demos/blob/master/react/src/App.js)
+Check out the top of [App.js](https://github.com/miragejs/demos/blob/master/react/src/App.js).
 
-## Usage
+## Usage in your own React app
 
 Install Mirage:
 
-```
+```sh
 yarn install -D @miragejs/server@2.0.0-beta.4
+
+# or npm install -D @miragejs/server@2.0.0-beta.4
 ```
 
 Import and use Mirage!
