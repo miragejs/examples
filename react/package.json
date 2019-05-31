@@ -23,6 +23,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@miragejs/server": "2.0.0-beta.4"
+    "@miragejs/server": "0.1.1"
   }
 }
