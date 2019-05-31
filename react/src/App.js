@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Server, { Model, Factory, JSONAPISerializer } from '@miragejs/server';
+import { Server, Model, Factory, JSONAPISerializer } from '@miragejs/server';
 
 let server = new Server({
   models: {
