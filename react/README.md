@@ -14,10 +14,10 @@ Check out the top of [App.js](https://github.com/miragejs/demos/blob/master/reac
 Install Mirage:
 
 ```sh
-yarn add -D @miragejs/server@2.0.0-beta.4
+yarn add -D @miragejs/server
 
 # Or use npm
-npm install -D @miragejs/server@2.0.0-beta.4
+npm install -D @miragejs/server
 ```
 
 Import and use Mirage!
