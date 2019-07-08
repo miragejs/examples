@@ -25,7 +25,7 @@ Import and use Mirage!
 ```js
 // App.js
 import React, { Component } from 'react';
-import Server from '@miragejs/server';
+import { Server } from '@miragejs/server';
 
 let server = new Server();
 server.get('/users', () => (
