@@ -12,7 +12,7 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@miragejs/server": "^0.1.1",
+    "@miragejs/server": "^0.1.16",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
