@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/react": "^8.0.6",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,6 +26,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@miragejs/server": "0.1.17"
+    "@miragejs/server": "0.1.18"
   }
 }

@@ -1,60 +1,57 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Server, Model, Factory, JSONAPISerializer } from '@miragejs/server';
+import React, { useState, useEffect, useRef } from "react";
+import "./App.css";
 
-let server = new Server({
-  models: {
-    user: Model
-  },
-  factories: {
-    user: Factory.extend({
-      name(i) {
-        return `User ${i}`;
+export default function App() {
+  let [users, setUsers] = useState([]);
+  let [isLoading, setIsLoading] = useState(true);
+  let [error, setError] = useState(false);
+  let isMounted = useRef(true);
+
+  useEffect(() => {
+    let fetchUsers = async function() {
+      setIsLoading(true);
+      let response = await fetch("/api/users");
+
+      if (isMounted.current) {
+        try {
+          let json = await response.json();
+          if (response.ok) {
+            setUsers(json.users);
+          } else {
+            setError(json.error);
+          }
+        } catch {
+          setError("The server was unreachable!");
+        } finally {
+          setIsLoading(false);
+        }
       }
-    })
-  },
-  serializers: {
-    application: JSONAPISerializer
-  },
-  scenarios: {
-    default(server) {
-      server.createList('user', 10);
-    }
-  },
-  baseConfig() {
-    this.namespace = 'api';
-    this.get('/users');
-    this.passthrough();
-  }
-});
-
-window.server = server;
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: []
     };
-  }
 
-  componentDidMount() {
-    fetch('/api/users')
-      .then(response => response.json())
-      .then(json => this.setState({ users: json.data }));
-  }
+    fetchUsers();
 
-  render() {
-    return (
-      <ul>
-        {this.state.users.map(user =>
-          <li key={user.id}>
-            {user.attributes.name}
-          </li>
-        )}
-      </ul>
-    );
-  }
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
+  return (
+    <div>
+      {isLoading ? (
+        <div data-testid="loading">Loading users...</div>
+      ) : error ? (
+        <div data-testid="error">{error}</div>
+      ) : users.length > 0 ? (
+        <ul data-testid="users">
+          {users.map(user => (
+            <li key={user.id} data-testid={`user-${user.id}`}>
+              {user.name}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div data-testid="no-users">Couldn't find any users!</div>
+      )}
+    </div>
+  );
 }
-
-export default App;
