@@ -1,0 +1,48 @@
+{
+  "name": "react-mirage-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^5.6.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^9.5.0",
+    "miragejs": "^0.1.41",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "swr": "^0.2.3",
+    "tailwindcss": "^1.8.10"
+  },
+  "scripts": {
+    "start": "craco start",
+    "start:proxy": "REACT_APP_PROXY=true craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:dev": "start-server-and-test start http://localhost:3000 cypress:open",
+    "cypress:ci": "start-server-and-test start http://localhost:3000 cypress:run",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:3001",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "plugin:cypress/recommended"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@testing-library/user-event": "^10.4.1",
+    "cypress": "^4.12.1",
+    "eslint-plugin-cypress": "^2.11.1",
+    "prettier": "^2.1.2",
+    "start-server-and-test": "^1.11.4"
+  }
+}

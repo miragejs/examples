@@ -1,8 +1,3 @@
-# Mirage Demos
+# Mirage Examples
 
-Here's a listing of our demos in various frameworks:
-
-- [React](https://github.com/miragejs/react-demo)
-- [Vue](https://github.com/miragejs/vue-demo)
-
-More to come!
+If you don't see an example with what you're looking for, feel free to [open an issue](https://github.com/miragejs/examples/issues/new)!

@@ -1,0 +1,5 @@
+# SPA push state routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
