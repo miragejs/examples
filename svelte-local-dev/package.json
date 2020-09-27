@@ -1,0 +1,38 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "watch:tailwind": "postcss public/tailwind.css -o public/index.css -w",
+    "build:tailwind": "NODE_ENV=production postcss public/tailwind.css -o public/index.css",
+    "dev": "run-p start:dev autobuild watch:tailwind",
+    "build": "npm run build:tailwind && rollup -c",
+    "autobuild": "rollup -c -w",
+    "start": "sirv public",
+    "start:dev": "sirv public --dev",
+    "lint": "eslint ./src/**/*.{svelte,js}",
+    "format": "prettier --list-different -- 'src/**/*.{html,js,svelte}'",
+    "format:fix": "prettier --write 'src/**/*.{html,js,svelte}'"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "miragejs": "^0.1.37",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0",
+    "prettier": "^1.19.1",
+    "prettier-plugin-svelte": "^0.7.0",
+    "rollup": "^1.20.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "svelte": "^3.0.0",
+    "tailwindcss": "^1.2.0"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.2",
+    "sirv-cli": "^0.4.4",
+    "svelte-routing": "^1.4.2"
+  }
+}
