@@ -4,9 +4,11 @@ import faker from "faker";
 export function makeServer({ environment = "development" } = {}) {
   let server = new Server({
     environment,
+
     models: {
-      user: Model
+      user: Model,
     },
+
     factories: {
       user: Factory.extend({
         name() {
@@ -18,17 +20,19 @@ export function makeServer({ environment = "development" } = {}) {
         },
         title() {
           return faker.name.title();
-        }
-      })
+        },
+      }),
     },
+
     seeds(server) {
       server.createList("user", 25);
     },
+
     routes() {
-      this.get("/api/users", schema => {
+      this.get("/api/users", (schema) => {
         return schema.users.all();
       });
-    }
+    },
   });
 
   return server;
