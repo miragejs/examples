@@ -14,7 +14,7 @@ describe("HelloWorld.vue", () => {
     server.shutdown();
   });
 
-  it("renders props.msg when passed", () => {
+  it("works", () => {
     const wrapper = shallowMount(HelloWorld);
     expect(wrapper.text()).to.include("ad");
   });

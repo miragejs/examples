@@ -19,7 +19,13 @@ export default {
     };
   },
   mounted() {
-    axios.get("/api/users").then(({ data }) => (this.users = data.users));
+    axios
+      .get("/api/users")
+      .then(({ data }) => (this.users = data.users))
+      .catch((e) => {
+        console.log("heres the error");
+        console.error(e);
+      });
   },
 };
 </script>
