@@ -2,6 +2,9 @@ import { expect } from "chai";
 import { shallowMount } from "@vue/test-utils";
 import HelloWorld from "@/components/HelloWorld.vue";
 import { makeServer } from "../../src/server";
+import axios from "axios";
+import XhrAdapter from "axios/lib/adapters/xhr";
+axios.defaults.adapter = XhrAdapter;
 
 describe("HelloWorld.vue", () => {
   let server;
