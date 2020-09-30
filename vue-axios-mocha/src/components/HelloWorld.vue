@@ -2,8 +2,16 @@
   <div class="hello">
     <h1>Users</h1>
 
-    <ul>
-      <li v-for="user in users" v-bind:key="user.id">{{ user.name }}</li>
+    <p v-if="!users">Loading...</p>
+
+    <ul v-else>
+      <li
+        v-for="user in users"
+        v-bind:key="user.id"
+        :data-test-id="`user-${user.id}`"
+      >
+        {{ user.name }}
+      </li>
     </ul>
   </div>
 </template>
@@ -13,19 +21,17 @@ import axios from "axios";
 
 export default {
   name: "HelloWorld",
+
   data() {
     return {
       users: null,
     };
   },
-  mounted() {
-    axios
-      .get("/api/users")
-      .then(({ data }) => (this.users = data.users))
-      .catch((e) => {
-        console.log("heres the error");
-        console.error(e);
-      });
+
+  async mounted() {
+    let res = await axios.get("/api/users");
+
+    this.users = res.data.users;
   },
 };
 </script>

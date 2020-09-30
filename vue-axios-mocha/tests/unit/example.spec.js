@@ -17,8 +17,14 @@ describe("HelloWorld.vue", () => {
     server.shutdown();
   });
 
-  it("works", () => {
+  it("shows users from the server", (done) => {
+    server.create("user", { name: "Sam" });
+
     const wrapper = shallowMount(HelloWorld);
-    expect(wrapper.text()).to.include("ad");
+
+    setTimeout(() => {
+      expect(wrapper.find('[data-test-id="user-1"]').text()).to.eq("Sam");
+      done();
+    }, 50);
   });
 });
