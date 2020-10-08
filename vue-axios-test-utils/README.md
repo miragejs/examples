@@ -4,7 +4,7 @@ This Vue app is set up with Mirage for both local development and UI testing wit
 
 It uses Axios for its network requests, and the test shows how to force Axios to use `window.XMLHttpRequest` so Mirage can intercept the Vue app's network requests.
 
-The Mirage server is in [src/server.js](./src/server.js). The test is in [tests/example.spec.js](./tests/example.spec.js).
+The Mirage server is in [src/server.js](./src/server.js). The test is in [tests/unit/example.spec.js](./tests/unit/example.spec.js).
 
 ## How to use
 
